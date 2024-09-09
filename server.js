@@ -16,6 +16,7 @@ const port = process.env.PORT || 5000;
 // body ke contents ko console.log karne main help karta hai
 app.use(express.json());
 app.use("/api/contacts", require("./routes/contactRoutes"));
+app.use("/api/users", require("./routes/userRoutes"));
 app.use(errorHandler);
 
 

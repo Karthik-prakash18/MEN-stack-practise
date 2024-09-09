@@ -21,6 +21,9 @@ const addContact = asyncHandler(async (req, res) => {
 const getContactId = asyncHandler(async (req, res) => {
     const contacts = await Contact.findById(req.params.id);
     // res.status(200).json({ message: `get contacts ${req.params.id}` });
+    if(!contacts){
+        res.status(404).json({ message: "not found" });
+    }
     res.status(200).json(contacts);
 });
 
